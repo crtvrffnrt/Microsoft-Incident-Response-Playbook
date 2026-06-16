@@ -3,7 +3,9 @@
 A practical Microsoft-focused incident response and security alert triage checklist for SOC analysts, incident responders, threat hunters, and security professionals.
 
 This guide is optimized for daily investigation work in Microsoft Defender XDR, Microsoft Sentinel, Entra ID, Defender for Endpoint, Defender for Office 365, Defender for Cloud Apps, Exchange Online, Intune, and Azure.
-
+<p align="center">
+  <img src="logo.png" alt="AGENTS.md logo" width="360">
+</p>
 This document is a consolidated Microsoft-focused incident response playbook for practical SOC alert triage, entity investigation, and evidence-driven containment decisions.
 Use it by starting with the investigation flow, identifying the affected entities, and then following the relevant section and embedded KQL queries for the alert type.
 Incident response playbooks are important during alert investigation because they make triage repeatable, reduce missed evidence, and help analysts make consistent decisions under time pressure.
