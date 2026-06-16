@@ -119,8 +119,6 @@ Incident response playbooks are important during alert investigation because the
 
 <details>
 <summary>Risky user and potential account compromise checks</summary>
-> [!NOTE]
-> This section contains detailed checks for user/account investigation.
 
 - Try to understand users activity during the time in scope to better decide to declare as not-True-Positive
 - Review alert evidence: affected user, `AccountObjectId`, IP address, MITRE techniques, source product, first activity, last activity, and related entities.
@@ -230,7 +228,7 @@ IdentityLogonEvents
 
 <details>
 <summary>Detailed phishing and BEC checks</summary>
-
+[!IMPORTANT]
 ### Message analysis
 
 - Review MDO detection details, delivery location, delivery action, threat names, policy actions, and post-delivery actions.
