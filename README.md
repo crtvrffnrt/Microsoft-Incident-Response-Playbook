@@ -1,9 +1,10 @@
 # Microsoft Incident Response Playbook for SOC Analysts
 
 A practical Microsoft-focused incident response and security alert triage checklist for SOC analysts, incident responders, threat hunters, and security professionals.
-
 This guide is optimized for daily investigation work in Microsoft Defender XDR, Microsoft Sentinel, Entra ID, Defender for Endpoint, Defender for Office 365, Defender for Cloud Apps, Exchange Online, Intune, and Azure.
-
+<p align="center">
+  <img src="logo.png" alt="AGENTS.md logo" width="360">
+</p>
 This document is a consolidated Microsoft-focused incident response playbook for practical SOC alert triage, entity investigation, and evidence-driven containment decisions.
 Use it by starting with the investigation flow, identifying the affected entities, and then following the relevant section and embedded KQL queries for the alert type.
 Incident response playbooks are important during alert investigation because they make triage repeatable, reduce missed evidence, and help analysts make consistent decisions under time pressure.
@@ -12,31 +13,45 @@ Incident response playbooks are important during alert investigation because the
 
 <table>
   <tr>
-    <td align="center"><a href="#investigation-flow"><strong>Investigation Flow</strong></a><br><sub>Start here</sub></td>
+    <th colspan="4" align="left">Start here</th>
+  </tr>
+  <tr>
+    <td align="center"><a href="#investigation-flow"><strong>Investigation Flow</strong></a><br><sub>Overall IR process</sub></td>
     <td align="center"><a href="#fast-triage-checklist"><strong>Fast Triage</strong></a><br><sub>First checks</sub></td>
-    <td align="center"><a href="#entity-investigation-map"><strong>Entity Map</strong></a><br><sub>Where to look</sub></td>
-    <td align="center"><a href="#final-analyst-review-before-closure-or-escalation"><strong>Final Review</strong></a><br><sub>Before closure</sub></td>
+    <td align="center"><a href="#entity-investigation-map"><strong>Entity Map</strong></a><br><sub>Pick the right path</sub></td>
+    <td align="center"><a href="#final-analyst-review-before-closure-or-escalation"><strong>Final Review</strong></a><br><sub>Close or escalate</sub></td>
+  </tr>
+
+  <tr>
+    <th colspan="4" align="left">User, identity and mailbox incidents</th>
   </tr>
   <tr>
-    <td align="center"><a href="#identity-centric-and-user-account-investigation"><strong>Identity</strong></a><br><sub>Users and sign-ins</sub></td>
-    <td align="center"><a href="#phishing-and-business-email-compromise-related-mail-centric-investigation"><strong>Phishing and BEC</strong></a><br><sub>Mail threats</sub></td>
+    <td align="center"><a href="#identity-centric-and-user-account-investigation"><strong>Identity</strong></a><br><sub>Sign-ins and users</sub></td>
+    <td align="center"><a href="#phishing-and-business-email-compromise-related-mail-centric-investigation"><strong>Phishing / BEC</strong></a><br><sub>Email-based attacks</sub></td>
     <td align="center"><a href="#mailbox-investigation"><strong>Mailbox</strong></a><br><sub>Rules and forwarding</sub></td>
-    <td align="center"><a href="#application-and-oauth-investigation"><strong>OAuth and Apps</strong></a><br><sub>Consent abuse</sub></td>
+    <td align="center"><a href="#application-and-oauth-investigation"><strong>OAuth / Apps</strong></a><br><sub>Consent and apps</sub></td>
+  </tr>
+
+  <tr>
+    <th colspan="4" align="left">Endpoint, network and indicators</th>
   </tr>
   <tr>
-    <td align="center"><a href="#endpoint-and-device-investigation"><strong>Endpoint</strong></a><br><sub>Process and host</sub></td>
+    <td align="center"><a href="#endpoint-and-device-investigation"><strong>Endpoint</strong></a><br><sub>Device and process</sub></td>
     <td align="center"><a href="#ip-address-investigation"><strong>IP Address</strong></a><br><sub>Source and destination</sub></td>
-    <td align="center"><a href="#url-investigation"><strong>URL</strong></a><br><sub>Clicks and redirects</sub></td>
-    <td align="center"><a href="#file-and-hash-investigation"><strong>File and Hash</strong></a><br><sub>Delivery and execution</sub></td>
+    <td align="center"><a href="#url-investigation"><strong>URL</strong></a><br><sub>Links and redirects</sub></td>
+    <td align="center"><a href="#file-and-hash-investigation"><strong>File / Hash</strong></a><br><sub>Malware evidence</sub></td>
+  </tr>
+
+  <tr>
+    <th colspan="4" align="left">Cloud, data access and follow-up</th>
   </tr>
   <tr>
-    <td align="center"><a href="#azure-and-cloud-activity-investigation"><strong>Azure and Cloud</strong></a><br><sub>Resource activity</sub></td>
+    <td align="center"><a href="#azure-and-cloud-activity-investigation"><strong>Azure / Cloud</strong></a><br><sub>Resource activity</sub></td>
     <td align="center"><a href="#data-access-and-exfiltration-indicators"><strong>Data Access</strong></a><br><sub>Exfil indicators</sub></td>
     <td align="center"><a href="#post-containment-validation"><strong>Post-Containment</strong></a><br><sub>Validate cleanup</sub></td>
     <td align="center"><a href="#common-benign-explanations"><strong>Benign Checks</strong></a><br><sub>False positives</sub></td>
   </tr>
 </table>
-
 ## Investigation Flow
 0. **Understand your own permissions to know what you cannot see during incident investigation.**
 1. Understand the alert trigger, source product, detection logic, severity, and first/last activity time.
