@@ -654,7 +654,7 @@ union isfuzzy=true
     or tostring(IpAddress) == TargetIP
 | project EventTime, Type, AccountUpn, UserPrincipalName, AccountName, DeviceName,
           IPAddress, ClientIP, RemoteIP, RemoteUrl, SenderFromAddress,
-          RecipientEmailAddress, Operation, ActivityType, ActionType, ReportId
+          RecipientEmailAddress, Operation, ActivityType, ActionType
 | order by EventTime desc
 ```
 
