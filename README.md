@@ -105,8 +105,7 @@ Incident response playbooks are important during alert investigation because the
 
 <details>
 <summary>Suspicious sign-in and unfamiliar sign-in properties</summary>
-[!NOTE]
-These queries support suspicious sign-in and user compromise investigation.
+
 - Treat high-severity unfamiliar sign-in properties as a strong signal until validated.
 - Review whether the sign-in differs from the user's 14- to 30-day baseline.
 - Focus on atypical IP, ASN, location, device, browser, user agent, token usage, app, and resource.
@@ -120,6 +119,9 @@ These queries support suspicious sign-in and user compromise investigation.
 
 <details>
 <summary>Risky user and potential account compromise checks</summary>
+> [!NOTE]
+> This section contains detailed checks for user/account investigation.
+
 - Try to understand users activity during the time in scope to better decide to declare as not-True-Positive
 - Review alert evidence: affected user, `AccountObjectId`, IP address, MITRE techniques, source product, first activity, last activity, and related entities.
 - Search the relevant sign-in by `AccountObjectId`, not only by UPN.
