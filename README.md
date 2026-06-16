@@ -35,7 +35,7 @@ Incident response playbooks are important during alert investigation because the
 | --- | --- | --- |
 | User | Was authentication legitimate, and what happened after sign-in? | `EntraIdSignInEvents`,`SigninLogs`, `AADSignInEventsBeta`, `AADNonInteractiveUserSignInLogs`, `AuditLogs`, `IdentityInfo`, `CloudAppEvents` |
 | Mailbox | Was mail accessed, manipulated, forwarded, or abused for outbound phishing? | `EmailEvents`, `EmailPostDeliveryEvents`, `EmailAttachmentInfo`, `UrlClickEvents`, `OfficeActivity`, Exchange audit |
-| Device | Did code execute, persist, connect outbound, or spread? | `DeviceProcessEvents`, `DeviceFileEvents`, `DeviceNetworkEvents`, `DeviceRegistryEvents`, `DeviceLogonEvents`, `DeviceInfo` |
+| Device | Defender Detect or Prevent, Defender RealTime active?, Local admin used, RMM Session involved? | `DeviceProcessEvents`, `DeviceFileEvents`, `DeviceNetworkEvents`, `DeviceRegistryEvents`, `DeviceLogonEvents`, `DeviceInfo` |
 | IP address | Is the IP expected, shared, anonymized, malicious, or linked to more entities? | Sign-in logs, MDE network events, `CloudAppEvents`, `OfficeActivity`, threat intelligence |
 | URL | Was the URL delivered, clicked, detonated, redirected, or contacted by endpoints? | `UrlClickEvents`, `EmailUrlInfo`, `DeviceNetworkEvents`, MDO Explorer, sandbox results |
 | File/hash | Was the file delivered, downloaded, executed, prevalent, signed, or quarantined? | `EmailAttachmentInfo`, `DeviceFileEvents`, `DeviceProcessEvents`, file profile, sandbox, reputation |
