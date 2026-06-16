@@ -228,7 +228,6 @@ IdentityLogonEvents
 
 <details>
 <summary>Detailed phishing and BEC checks</summary>
-[!IMPORTANT]
 ### Message analysis
 
 - Review MDO detection details, delivery location, delivery action, threat names, policy actions, and post-delivery actions.
