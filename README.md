@@ -11,6 +11,8 @@ Incident response playbooks are important during alert investigation because the
 
 ## Quick Navigation
 
+<div align="center">
+
 <table>
   <tr>
     <th colspan="4" align="left">Start here</th>
@@ -52,6 +54,7 @@ Incident response playbooks are important during alert investigation because the
     <td align="center"><a href="#common-benign-explanations"><strong>Benign Checks</strong></a><br><sub>False positives</sub></td>
   </tr>
 </table>
+
 ## Investigation Flow
 0. **Understand your own permissions to know what you cannot see during incident investigation.**
 1. Understand the alert trigger, source product, detection logic, severity, and first/last activity time.
