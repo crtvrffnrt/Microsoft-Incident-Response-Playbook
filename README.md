@@ -134,7 +134,7 @@ Incident response playbooks are important during alert investigation because the
 - Review endpoint logons and local admin usage if the identity maps to a workstation.
 
 ### True-positive indicators
-
+- Other alerts for same UPN within 48h timeframe.
 - Successful sign-in from an anomalous IP, ASN, country, browser, or unmanaged device followed by mailbox or cloud activity.
 - Same token/session used from a different IP or impossible location.
 - Repeated MFA denials followed by successful access.
