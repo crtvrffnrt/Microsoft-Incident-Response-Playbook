@@ -49,9 +49,7 @@ Incident response playbooks are important during alert investigation because the
   </tr>
   <tr>
     <td align="center"><a href="#azure-and-cloud-activity-investigation"><strong>Azure / Cloud</strong></a><br><sub>Resource activity</sub></td>
-    <td align="center"><a href="#data-access-and-exfiltration-indicators"><strong>Data Access</strong></a><br><sub>Exfil indicators</sub></td>
-    <td align="center"><a href="#post-containment-validation"><strong>Post-Containment</strong></a><br><sub>Validate cleanup</sub></td>
-    <td align="center"><a href="#common-benign-explanations"><strong>Benign Checks</strong></a><br><sub>False positives</sub></td>
+    <td colspan="3" align="center"><a href="#more"><strong>More</strong></a><br><sub>Additional validation and review guidance</sub></td>
   </tr>
 </table>
 
@@ -967,7 +965,12 @@ MicrosoftGraphActivityLogs
 
 </details>
 
-## Data Access and Exfiltration Indicators
+## More
+
+<details>
+<summary>Expand the additional validation and review guidance</summary>
+
+### Data Access and Exfiltration Indicators
 
 - Mass mailbox reads, mailbox search activity, or unusual `MailItemsAccessed`.
 - High-volume SharePoint/OneDrive downloads, sync activity, external sharing, anonymous links, or access from new IPs.
@@ -976,7 +979,7 @@ MicrosoftGraphActivityLogs
 - Endpoint archive creation, staging directories, compression tools, cloud upload tools, or large outbound transfers.
 - Repeated failed access followed by successful access to sensitive resources.
 
-## Post-Containment Validation
+### Post-Containment Validation
 
 - Confirm sessions were revoked and no new suspicious sign-ins occur.
 - Confirm password reset or credential rotation completed where required.
@@ -986,7 +989,7 @@ MicrosoftGraphActivityLogs
 - Confirm blocks for sender/domain/IP/URL/hash/app are active where appropriate.
 - Continue monitoring for reauthentication, token reuse, new rules, outbound sends, endpoint callbacks, and repeated IP/app activity.
 
-## Common Benign Explanations
+### Common Benign Explanations
 
 - Corporate VPN, SASE, proxy, VDI, NAT gateway, mail gateway, or mobile carrier egress.
 - Business travel or roaming where device, MFA, and post-authentication behavior remain normal.
@@ -996,7 +999,7 @@ MicrosoftGraphActivityLogs
 - High-prevalence signed file from a trusted vendor and expected deployment path.
 - Sender IP reputation noise where mail authentication, content, recipient behavior, and telemetry are otherwise benign.
 
-## Final Analyst Review Before Closure or Escalation
+### Final Analyst Review Before Closure or Escalation
 
 - The earliest suspicious event and current investigation window are clear.
 - All impacted entities are identified or explicitly listed as unknown.
@@ -1006,3 +1009,5 @@ MicrosoftGraphActivityLogs
 - Containment actions match evidence and confidence.
 - Evidence gaps are documented: missing logs, unavailable mailbox audit, offline endpoint, incomplete retention, or unconfirmed user context.
 - Monitoring items are clear: repeated sign-ins, token reuse, new mailbox rules, outbound sends, endpoint callbacks, app activity, and Azure changes.
+
+</details>
