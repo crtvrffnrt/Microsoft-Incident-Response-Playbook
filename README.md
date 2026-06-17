@@ -92,7 +92,7 @@ Incident response playbooks are important during alert investigation because the
 | Azure resource | Were roles, resources, secrets, network exposure, or identities changed? | `AzureActivity`, Entra audit, Graph activity, resource logs |
 
 
-## Identity centric and User Account Investigation
+## Identity centric and User Account Investigation 🤦‍♂️
 
 - Review interactive and non-interactive sign-ins before, during, and after the alert.
 - Compare IP, ASN, country, city, device, browser, user agent, app, and resource against normal user behavior.
@@ -155,6 +155,8 @@ Incident response playbooks are important during alert investigation because the
 <details>
 <summary>Suspicious sign-in, unfamiliar properties, and potential account compromise checks</summary>
 
+### Dive Deeper to find out if user is compromised
+
 - Treat high-severity unfamiliar sign-in properties as a strong signal until validated.
 - Review the user's 14- to 30-day baseline and compare IP, ASN, location, device, browser, user agent, token behavior, app, and resource.
 - Review alert evidence: affected user, `AccountObjectId`, IP address, MITRE techniques, source product, first activity, last activity, and related entities.
@@ -162,7 +164,7 @@ Incident response playbooks are important during alert investigation because the
 - Investigate correct-password activity followed by MFA denial or successful access from a new session.
 - Check for AiTM indicators: suspicious URL click before sign-in, token/session reuse, unexpected MFA satisfaction, or non-interactive token activity after the alert.
 - Correlate suspicious IP and token use across `SigninLogs`, `AADNonInteractiveUserSignInLogs`, `AADSignInEventsBeta`, `CloudAppEvents`, and mailbox/audit activity.
-- Review the user's Defender XDR Timeline for the scoped window and filter out noisy apps, background services, and routine automation to understand meaningful user activity.
+- **Review the user's Defender XDR Timeline for the scoped window and filter out noisy apps, background services, and routine automation to understand meaningful user activity.** 🔎
 - Review Defender XDR incident graph for related user, mailbox, URL, file, IP, device, app, and alert entities.
 - Review XDR-correlated evidence for credential access, collection, suspicious email/web access, mailbox access, and cloud app abuse.
 - Check whether the user accessed suspicious emails, released quarantine messages, or clicked URLs before the sign-in.
