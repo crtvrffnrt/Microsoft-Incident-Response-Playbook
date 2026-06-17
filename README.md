@@ -28,7 +28,7 @@ Incident response playbooks are important during alert investigation because the
     <th colspan="4" align="left">User, identity and mailbox incidents</th>
   </tr>
   <tr>
-    <td align="center"><a href="#identity-centric-and-user-account-investigation"><strong>Identity</strong></a><br><sub>Sign-ins and users</sub></td>
+    <td align="center"><a href="#identity-centric-and-user-account-investigation-‍%EF%B8%8F"><strong>Identity</strong></a><br><sub>Sign-ins and users</sub></td>
     <td align="center"><a href="#phishing-and-business-email-compromise-related-mail-centric-investigation"><strong>Phishing / BEC</strong></a><br><sub>Email-based attacks</sub></td>
     <td align="center"><a href="#mailbox-investigation"><strong>Mailbox</strong></a><br><sub>Rules and forwarding</sub></td>
     <td align="center"><a href="#application-and-oauth-investigation"><strong>OAuth / Apps</strong></a><br><sub>Consent and apps</sub></td>
