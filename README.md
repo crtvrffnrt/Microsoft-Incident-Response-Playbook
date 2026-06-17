@@ -153,29 +153,23 @@ Incident response playbooks are important during alert investigation because the
 </details>
 
 <details>
-<summary>Suspicious sign-in and unfamiliar sign-in properties</summary>
+<summary>Suspicious sign-in, unfamiliar properties, and potential account compromise checks</summary>
 
 - Treat high-severity unfamiliar sign-in properties as a strong signal until validated.
-- Review whether the sign-in differs from the user's 14- to 30-day baseline.
-- Focus on atypical IP, ASN, location, device, browser, user agent, token usage, app, and resource.
+- Review the user's 14- to 30-day baseline and compare IP, ASN, location, device, browser, user agent, token behavior, app, and resource.
+- Review alert evidence: affected user, `AccountObjectId`, IP address, MITRE techniques, source product, first activity, last activity, and related entities.
+- Search the relevant sign-in by `AccountObjectId`, not only by UPN.
 - Investigate correct-password activity followed by MFA denial or successful access from a new session.
 - Check for AiTM indicators: suspicious URL click before sign-in, token/session reuse, unexpected MFA satisfaction, or non-interactive token activity after the alert.
 - Correlate suspicious IP and token use across `SigninLogs`, `AADNonInteractiveUserSignInLogs`, `AADSignInEventsBeta`, `CloudAppEvents`, and mailbox/audit activity.
+- Review the user's Defender XDR Timeline for the scoped window and filter out noisy apps, background services, and routine automation to understand meaningful user activity.
 - Review Defender XDR incident graph for related user, mailbox, URL, file, IP, device, app, and alert entities.
-- If suspicious activity is likely or cannot be ruled out, revoke sessions while continuing scoping.
-
-</details>
-
-<details>
-<summary>Risky user and potential account compromise checks</summary>
-- Try to understand users activity during the time in scope to better decide to declare as not-True-Positive
-- Review alert evidence: affected user, `AccountObjectId`, IP address, MITRE techniques, source product, first activity, last activity, and related entities.
-- Search the relevant sign-in by `AccountObjectId`, not only by UPN.
 - Review XDR-correlated evidence for credential access, collection, suspicious email/web access, mailbox access, and cloud app abuse.
 - Check whether the user accessed suspicious emails, released quarantine messages, or clicked URLs before the sign-in.
 - Review mailbox audit, inbox rule creation, forwarding, sends, deletes, and delegated access.
 - Review `AuditLogs` for MFA, password, app consent, service principal, and role changes.
 - Confirm whether the activity is active, historical, attempted, or unsupported by available telemetry.
+- If suspicious activity is likely or cannot be ruled out, revoke sessions while continuing scoping.
 
 </details>
 
